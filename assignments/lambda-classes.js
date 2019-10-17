@@ -36,7 +36,7 @@ class Student extends Person{
     }
 
     listsSubjects(){
-        return this.favSubject.forEach(console.log(favSub)) ;
+        return this.favSubject.forEach(favSub => console.log(favSub)) ;
     }
     PRAssignment(studentSubject){
         return `${this.name} has submitted a PR for ${studentSubject}`
@@ -56,3 +56,36 @@ class ProjectManager extends Instructor{
         return `${this.name} debugs ${theStudent.name}'s code on ${theSubject}`
     }
 }
+
+const instructorOne = new Instructor({
+    name: 'Britt',
+    age: 'NA',
+    location:'Canada',
+    specialty: 'Web Fundamental',
+    favLanguage: 'CSS',
+    catchPhrase: 'I\'m going to send you to breakout groups'
+})// closes instructorOne
+
+const studentOne = new Student({
+    name: 'Mashima',
+    age: 29,
+    location:'Florida',
+    previousBackground: 'Customer Services',
+    favSubject: ['Sleep', 'Eat', 'Music']
+})// closes studentOne
+
+const pmOne = new ProjectManager({
+    name:'Allie',
+    age: 'NA',
+    location: 'USA',
+    specialty: 'JavaScript',
+    favLanguage: 'JavaScript',
+    catchPhrase: 'Gotta catch\'em all',
+    gradClassName:'WEBPTXX',
+    favInstructor: 'Josh'
+})// closes instructorOne
+
+console.log(instructorOne)
+console.log(studentOne)
+console.log(pmOne)
+console.log(studentOne.listsSubjects())
