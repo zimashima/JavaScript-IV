@@ -23,7 +23,7 @@ class Instructor extends Person{
         return `Today we are learning about ${subject}`
     }
     
-    grade(student){
+    grade(student, subject){
         return `${student.name} receives a perfect score on ${subject}`
     }
 }//closes Instructor Class
@@ -41,6 +41,10 @@ class Student extends Person{
     PRAssignment(studentSubject){
         return `${this.name} has submitted a PR for ${studentSubject}`
     }
+    sprintChallenge(studentSubject2){
+        return `${this.name} has begun a sprint challenge on ${studentSubject2}`
+    }
+
 } // closes Student
 
 class ProjectManager extends Instructor{
@@ -55,7 +59,7 @@ class ProjectManager extends Instructor{
     debugsCode(theStudent, theSubject){
         return `${this.name} debugs ${theStudent.name}'s code on ${theSubject}`
     }
-}
+}// closes PM
 
 const instructorOne = new Instructor({
     name: 'Britt',
@@ -88,4 +92,14 @@ const pmOne = new ProjectManager({
 console.log(instructorOne)
 console.log(studentOne)
 console.log(pmOne)
+
+
+console.log(instructorOne.demo('JS'))
+console.log(instructorOne.grade(studentOne, 'JS'))
+
+console.log(pmOne.standUp('#web25_allie'))
+console.log(pmOne.debugsCode(studentOne, 'JavaScript'))
+
 console.log(studentOne.listsSubjects())
+console.log(studentOne.PRAssignment('JavaScript'))
+console.log(studentOne.sprintChallenge('JavaScript'))
