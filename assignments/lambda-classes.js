@@ -93,7 +93,7 @@ console.log(instructorOne)
 console.log(studentOne)
 console.log(pmOne)
 
-
+console.log(instructorOne.speak())
 console.log(instructorOne.demo('JS'))
 console.log(instructorOne.grade(studentOne, 'JS'))
 
