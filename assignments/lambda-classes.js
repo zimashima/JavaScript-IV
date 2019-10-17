@@ -33,6 +33,7 @@ class Student extends Person{
         super(STDattrs);
         this.previousBackground = STDattrs.previousBackground;
         this.favSubject = STDattrs.favSubject;
+        this.grade = STDattrs.grade;
     }
 
     listsSubjects(){
@@ -75,7 +76,8 @@ const studentOne = new Student({
     age: 29,
     location:'Florida',
     previousBackground: 'Customer Services',
-    favSubject: ['Sleep', 'Eat', 'Music']
+    favSubject: ['Sleep', 'Eat', 'Music'],
+    grade: 50
 })// closes studentOne
 
 const pmOne = new ProjectManager({

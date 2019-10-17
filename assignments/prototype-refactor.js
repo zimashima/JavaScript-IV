@@ -103,3 +103,79 @@ class Humanoid extends CharacterStats {
     console.log(mage.takeDamage()); // Bruce took damage.
     console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
   
+    class Hero extends Humanoid{
+        constructor(heroAttrs){
+          super(heroAttrs);
+        }
+        sasukeee(enemy){
+          if (enemy.healthPoints > 0){
+            console.log(`${this.name} attacks ${enemy.name}`)
+            enemy.healthPoints = enemy.healthPoints - 5;
+            if (enemy.healthPoints <= 0){
+            console.log(`${enemy.name}'s Health Point is now 0`)
+            console.log(`RIP ${enemy.name}`)
+            } else {
+              console.log(`${enemy.name}'s Health Point is now ${enemy.healthPoints}`)
+            }
+          }
+        }
+      }
+        
+      class Villain extends Humanoid{
+        constructor(villainAttrs){
+          super(villainAttrs);
+        }
+        narutooo(enemy){
+          if (enemy.healthPoints > 0){
+            console.log(`${this.name} attacks ${enemy.name}`)
+            enemy.healthPoints = enemy.healthPoints - 5;
+            if (enemy.healthPoints <= 0){
+            console.log(`${enemy.name}'s Health Point is now 0`)
+            console.log(`RIP ${enemy.name}`)
+            } else {
+              console.log(`${enemy.name}'s Health Point is now ${enemy.healthPoints}`)
+            }
+          }
+        }
+      }
+      const theHero = new Hero({
+        createdAt: new Date(),
+        dimensions: {
+          length: 1,
+          width: 2,
+          height: 4,
+        },
+        healthPoints: 20,
+        name: 'Naruto',
+        team: 'Konoha Village',
+        weapons: [
+          'Shuriken',
+          'Chakra',
+        ],
+        language: 'Gibberish',
+      });
+    
+      const theVillain = new Villain({
+        createdAt: new Date(),
+        dimensions: {
+          length: 1,
+          width: 2,
+          height: 4,
+        },
+        healthPoints: 20,
+        name: 'Sasuke',
+        team: 'Sasuke-kun Team',
+        weapons: [
+          'Sword',
+          'Sharingan',
+        ],
+        language: 'Nonsense',
+      });
+      theVillain.narutooo(theHero)
+      theHero.sasukeee(theVillain)
+      theVillain.narutooo(theHero)
+      theHero.sasukeee(theVillain)
+      theVillain.narutooo(theHero)
+      theHero.sasukeee(theVillain)
+      theVillain.narutooo(theHero)
+      theHero.sasukeee(theVillain)
